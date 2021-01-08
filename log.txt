@@ -1,2 +1,6 @@
 vr  8 jan 2021 13:33:47 CET
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=115 time=11.4 ms
+.
+
+******** log.txt: Not a text file ********
+

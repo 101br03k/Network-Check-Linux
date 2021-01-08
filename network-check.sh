@@ -1,15 +1,16 @@
 #!/bin/sh
 clear
-date > ~/linux-config/network-check/ping2.txt
-ping -c5 8.8.8.8 > ~/linux-config/network-check/ping1.txt
-sed -i '9d' ~/linux-config/network-check/ping1.txt
-sed -i '8d' ~/linux-config/network-check/ping1.txt
-sed -i '7d' ~/linux-config/network-check/ping1.txt
-sed -i '6d' ~/linux-config/network-check/ping1.txt
-sed -i '5d' ~/linux-config/network-check/ping1.txt
-sed -i '4d' ~/linux-config/network-check/ping1.txt
-sed -i '3d' ~/linux-config/network-check/ping1.txt
-sed -i '2d' ~/linux-config/network-check/ping1.txt
-sed -i '1d' ~/linux-config/network-check/ping1.txt
-sed -r 's/^.{23}//' < ~/linux-config/network-check/ping1.txt >> ~/linux-config/network-check/ping2.txt
-more ~/linux-config/network-check/ping2.txt
+date > ping1.txt
+ping -c1 8.8.8.8 >> ping1.txt
+sed -i '7d' ping1.txt
+sed -i '6d' ping1.txt
+sed -i '5d' ping1.txt
+sed -i '4d' ping1.txt
+sed -i '2d' ping1.txt
+#sed -i '/icmp_seq=1/d' ping1.txt
+#sed -e 's/ping1.txt\<ttl=115/>//g'
+more log.txt > log2.txt
+more ping1.txt > log.txt
+echo "." >> log.txt
+more log2.txt >> log.txt
+more ping1.txt
